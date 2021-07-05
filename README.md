@@ -1,38 +1,71 @@
-# TV-Script-generation# Project-TV-Script-Generation-Udacity
-This is the fourth project of Deep Learning Nanodegree Program (Using a DCGAN on the CelebA dataset to generate images of new and realistic human faces.)
+[//]: # (Image References)
 
+[image1]: ./images/sample_beagle.jpg "Sample Output"
+[image2]: ./images/vgg16_model.png "VGG-16 Model Layers"
+[image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
 
-# Project Overview: TV Script Generator
-In this project, I have generated my own Seinfeld TV scripts using RNNs.I have used part of the Seinfeld dataset of scripts from 9 seasons. The Neural Network build will generate a new ,"fake" TV script, based on patterns it recognizes in the training data.
+# TV Script Generation
 
-# Installation:
+## Project Overview
 
-1. For running this project on your local computer, first make sure you have git by typing `git --version` on cmd, if version number appears that means you have git installed. Go ahead and clone the repository:
+This project is based on the [TV Script Generation repo](https://github.com/udacity/deep-learning-v2-pytorch/tree/master/project-tv-script-generation) for the [Udacity Deep Learning NanoDegree](https://www.udacity.com/course/deep-learning-nanodegree--nd101).
 
-```
-git clone https://github.com/Sidrah-Madiha/Project-TV-Script-Generation-Udacity.git
-cd Project-TV-Script-Generation-Udacity
+It generates its own Seinfeld TV scripts using RNNs and a Seinfeld dataset of scripts from 9 seasons. The Neural Network will generate a new, "fake" TV script.
 
-```
-2. Now please open the file with filename: dlnd_tv_script_generation.ipynb
+## Project Instructions
 
+### Instructions
 
-# Dependencies:
+1. Clone the repository and navigate to the downloaded folder.
+	
+	```	
+		git clone https://github.com/HectorBudielE/udacity-tv-script-generation.git
+		cd udacity-tv-script-generation
+	```
+2. Make sure you have already installed the necessary Python packages according to the requirements.txt file.
+3. Open a terminal window and navigate to the project folder. Open the notebook and follow the steps.
+	
+	```
+		jupyter dlnd_tv_script_generation.ipynb
+	```
 
-- Make sure to create an environment for running this project using conda (you can install [Miniconda](http://conda.pydata.org/miniconda.html) for this
+__NOTE:__ In the notebook, you will need to train RNNs in PyTorch.  If your RNN is taking too long to train, feel free to pursue one of the options under the section __Accelerating the Training Process__ below.
 
-- Once you have Miniconda installed, please make an environment for the project like so: 
-```
-conda create --name TV-Script-Generator  python=3.6
-activate TV-Script-Generator
+## Project Information
 
-```
-- Install Pytorch: 
-```
-conda install pytorch -c pytorch
-pip install torchvision
-```
+### Contents
 
-- Install a few required pip packages, which are specified in the requirements text file.
+1. Get the Data
+2. Explore the Data
+3. Implement Preprocessing Functions:
+    * Lookup Table
+    * Tokenize Punctuation
+    * Pre-process all the data and save it
+    
+4. Build the Neural Network
+    * Check Access to GPU
+    * Input Batching
+    * Test the Dataloader
+    * Model
+    * Defining Forward and Backpropagation
+    
+5. Neural Network Training
+    * Train Loop
+    * Hyperparameters
+    * Training
+    
+6. Generate TV Script
+    * Generate Text
+    * Generate a New Script
 
-`pip install -r requirements.txt`
+## (Optionally) Accelerating the Training Process 
+
+If your code is taking too long to run, you will need to either reduce the complexity of your chosen RNN architecture or switch to running your code on a GPU.  If you'd like to use a GPU, you can spin up an instance of your own:
+
+#### Amazon Web Services
+
+You can use Amazon Web Services to launch an EC2 GPU instance. (This costs money)
+
+#### Google Colab
+
+You can run this notebook in Google Colab for free. You have to be careful about the access of the extracted data in the notebook.
